@@ -1,8 +1,8 @@
 ## Dotfiles
 
-These are my dotfiles for [Fish Shell](http://fishshell.com/), [Sublime Text 3](http://www.sublimetext.com/3), and [Guard](https://github.com/guard/guard). Thanks [Chris Lobay](https://github.com/christopherlobay) for influencing the elegant [file structure](https://github.com/christopherlobay/dotfiles).
+These are my dotfiles for [Fish Shell](http://fishshell.com/), [Sublime Text 3](http://www.sublimetext.com/3), and [Guard](https://github.com/guard/guard). I'm currently using the [Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) in Sublime Text 3.
 
-I'm using the [Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) from [Chris Kempson](https://github.com/chriskempson) in Sublime Text 3.
+Thanks [Chris Lobay](https://github.com/christopherlobay) for influencing the elegant [file structure](https://github.com/christopherlobay/dotfiles).
 
 ## Installation
 
