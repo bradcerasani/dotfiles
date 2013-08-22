@@ -1,5 +1,6 @@
 {
 	"bold_folder_labels": true,
+	"color_scheme": "Packages/Theme - Tomorrow/Tomorrow-Night.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
@@ -27,7 +28,6 @@
 	"phoenix_highlight_current_tab": true,
 	"phoenix_solid_current_tab": true,
 	"phoenix_tabs_normal": true,
-	"color_scheme": "Packages/Theme - Tomorrow/Tomorrow-Night.tmTheme",
 	"save_on_focus_lost": true,
 	"scroll_past_end": false,
 	"tab_size": 2,
