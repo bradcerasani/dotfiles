@@ -1,4 +1,4 @@
-# Brad Cerasani's Dotfiles
+## Dotfiles
 
 These are my dotfiles for [Fish Shell](http://fishshell.com/), [Sublime Text 3](http://www.sublimetext.com/3), and [Guard](https://github.com/guard/guard). Thanks [Chris Lobay](https://github.com/christopherlobay) for influencing the elegant [file structure](https://github.com/christopherlobay/dotfiles).
 
