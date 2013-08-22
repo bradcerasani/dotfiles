@@ -45,5 +45,5 @@ Crawl the code and copy out the cool bits. Most of the good stuff is in fish/con
 - Create helper script to streamline install.
 
 ## Feedback
-File an [issue](https://github.com/bcerasani/dotfiles/issues) or hit me up on Twitter [@shedbot](http://twitter.com/shedbot)
+File an [issue](https://github.com/bcerasani/dotfiles/issues), send me an [email](bradcerasani@gmail.com), or hit me up on Twitter: [@shedbot](http://twitter.com/shedbot)
 
