@@ -11,7 +11,7 @@ I'm using the [Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) f
 ###Clone the repo and hop in:
 
 ```bash
-git clone https://github.com/bradcerasani/dotfiles.git && cd dotfiles
+git clone https://github.com/bcerasani/dotfiles.git && cd dotfiles
 ```
 
 Drag or `mv` target files onto your desktop before creating symlinks in case something breaks.
@@ -43,5 +43,5 @@ Crawl the code and copy out the cool bits. Most of the good stuff is in fish/con
 - Create helper script to streamline install.
 
 ## Feedback
-File an [issue](https://github.com/bradcerasani/dotfiles/issues) or hit me up on Twitter [@shedbot](http://twitter.com/shedbot)
+File an [issue](https://github.com/bcerasani/dotfiles/issues) or hit me up on Twitter [@shedbot](http://twitter.com/shedbot)
 
