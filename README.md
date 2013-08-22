@@ -14,10 +14,12 @@ I'm using the [Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) f
 git clone https://github.com/bcerasani/dotfiles.git && cd dotfiles
 ```
 
+### Set up symlinks:
 Drag or `mv` target files onto your desktop before creating symlinks in case something breaks.
 
-### Set up symlinks:
-Note: Your file paths may differ. To force create symlinks use `ln -sfn`
+To force create symlinks use `ln -sfn`
+
+Note: Your file paths may differ
 ###### Fish Shell
 ```bash
 ln -s ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
