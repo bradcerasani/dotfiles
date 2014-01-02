@@ -1,6 +1,7 @@
 {
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Theme - Tomorrow/Tomorrow-Night.tmTheme",
+	"theme": "Spacegray.sublime-theme",
+  "color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
@@ -22,13 +23,8 @@
 	[
 		"Vintage"
 	],
-	"phoenix_color_blue": true,
-	"phoenix_dirty_bottom_bar": true,
-	"phoenix_solid_current_tab": true,
-	"phoenix_tabs_normal": true,
 	"save_on_focus_lost": true,
 	"scroll_past_end": false,
 	"tab_size": 2,
-	"theme": "Phoenix Dark.sublime-theme",
 	"trim_trailing_white_space_on_save": true
 }
