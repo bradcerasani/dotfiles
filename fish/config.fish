@@ -4,7 +4,7 @@ set PATH /usr/local/share/npm/bin:$PATH
 rbenv rehash >/dev/null ^&1
 
 set fish_greeting
-  set_color yellow
+  set_color white
   echo Happy (date '+%A').\n
 
 set error NOPE (set_color yellow)chuck testa  🐴
@@ -107,10 +107,8 @@ function get
   switch $argv
     case jquery
       download http://code.jquery.com/jquery.min.js
-    case underscore
-    	download http://underscorejs.org/underscore.js
     case normalize
-    	download http://necolas.github.io/normalize.css/2.1.2/normalize.css
+    	download https://raw.github.com/necolas/normalize.css/master/normalize.css
     case '*'
       echo $error
   end
@@ -134,8 +132,8 @@ end
 #	Prompt
 function fish_prompt
   if test -d .git
-    printf '%s%s  %s%s git:%s%s ' (set_color yellow) (prompt_pwd) (set_color normal) (parse_git_branch)
+    printf '%s  %s%s git:%s ' 🍉 (set_color black) (prompt_pwd) (parse_git_branch)
   else
-    printf '%s%s  %s%s%s ' (set_color yellow) (prompt_pwd) (set_color normal)
+    printf '%s  %s%s ' 🍉 (set_color black) (prompt_pwd)
   end
 end
