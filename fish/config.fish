@@ -1,5 +1,6 @@
 set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
+set PATH /usr/local/share/npm/bin:$PATH
 rbenv rehash >/dev/null ^&1
 
 set fish_greeting
@@ -118,31 +119,23 @@ end
 #	Blog Kickstart
 function blog # $title $tags
   set date (date '+%Y-%m-%d')
-  set filename $date-(echo $argv[1] | tr -s ' ' | tr ' ' '-')
-  set postdir ~/desktop/
+  set filename (echo $argv[1] | tr -s ' ' | tr ' ' '-')
+  set gitdir ~/documents/Journal/
   set var_count (count $argv)
-  cd $postdir
+  cd $gitdir
     if test $var_count = 2
-  		echo title: $argv[1]\ndate: $date\ntags: $argv[2]\n---\n\n >$filename.md
+  		echo title: $argv[1]\nexcerpt: \ndate: $date\ntags: $argv[2]\n---\n\n >entries/$filename.md
     else
-   		echo title: $argv[1]\ndate: $date\ntags: general\n---\n\n >$filename.md
+   		echo title: $argv[1]\nexcerpt: \ndate: $date\ntags: general\n---\n\n >entries/$filename.md
    	end
-  open $filename.md
-end
-
-# Test Birthday
-function birthday
-	set date (date '+%m%d')
-	if test $date = 0415
-		echo   '  🎂'
-	end
+  open entries/$filename.md
 end
 
 #	Prompt
 function fish_prompt
   if test -d .git
-    printf '%s%s  %s%s git:%s%s ' (echo 🐙) (birthday) (set_color yellow) (prompt_pwd) (set_color normal) (parse_git_branch)
+    printf '%s%s  %s%s git:%s%s ' (set_color yellow) (prompt_pwd) (set_color normal) (parse_git_branch)
   else
-    printf '%s%s  %s%s%s ' (echo 🐙) (birthday) (set_color yellow) (prompt_pwd) (set_color normal)
+    printf '%s%s  %s%s%s ' (set_color yellow) (prompt_pwd) (set_color normal)
   end
 end
