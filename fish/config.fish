@@ -132,8 +132,8 @@ end
 #	Prompt
 function fish_prompt
   if test -d .git
-    printf '%s  %s%s git:%s ' 🍉 (set_color black) (prompt_pwd) (parse_git_branch)
+    printf '%s  %s%s git:%s ' 🍉 (set_color -o black) (prompt_pwd) (parse_git_branch)
   else
-    printf '%s  %s%s ' 🍉 (set_color black) (prompt_pwd)
+    printf '%s  %s%s ' 🍉 (set_color -o black) (prompt_pwd)
   end
 end
