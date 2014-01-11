@@ -1,6 +1,6 @@
 set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
-set PATH /usr/local/share/npm/bin:$PATH
+set PATH $HOME/usr/local/bin
 rbenv rehash >/dev/null ^&1
 
 set fish_greeting
@@ -8,6 +8,26 @@ set fish_greeting
   echo Happy (date '+%A').\n
 
 set error NOPE (set_color yellow)chuck testa  🐴
+
+function desktop
+  cd $HOME/desktop
+end
+
+function ..
+  cd ..
+end
+
+function ...
+  cd ../..
+end
+
+function ....
+  cd ../../..
+end
+
+function .....
+  cd ../../../..
+end
 
 function hush
   touch ~/.hushlogin
