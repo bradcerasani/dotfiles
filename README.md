@@ -2,8 +2,6 @@
 
 These are my dotfiles for [Fish Shell](http://fishshell.com/), [Sublime Text 3](http://www.sublimetext.com/3), and [Guard](https://github.com/guard/guard). I'm currently using the [Spacegray Theme](https://github.com/kkga/spacegray) in Sublime Text 3.
 
-Thanks [Chris Lobay](https://github.com/christopherlobay) for influencing the elegant [file structure](https://github.com/christopherlobay/dotfiles).
-
 ## Installation
 
 `cd` into wherever you'd like to store this repo. I keep it in my home directory `~/`
