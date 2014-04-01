@@ -1,9 +1,7 @@
 set PATH /opt/bin $PATH
-set PATH $HOME/.rbenv/opt/bin $PATH
+set PATH /usr/local/bin $PATH
 set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
-set PATH $HOME/usr/local/bin
-rbenv rehash >/dev/null ^&1
 
 set fish_greeting
   set_color white
