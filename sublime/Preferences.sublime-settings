@@ -20,8 +20,8 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"CSScomb JS",
-		"Vintage"
+		"Vintage",
+		"CSScomb JS"
 	],
 	"match_brackets": true,
 	"match_brackets_angle": true,
