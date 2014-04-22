@@ -4,7 +4,6 @@ set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
 
 set fish_greeting
-  set_color white
   echo Happy (date '+%A').\n
 
 set error NOPE (set_color yellow)chuck testa  🐴
