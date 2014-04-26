@@ -1,6 +1,6 @@
 ## Dotfiles
 
-These are my dotfiles for [Fish Shell](http://fishshell.com/), [Sublime Text 3](http://www.sublimetext.com/3), and [Guard](https://github.com/guard/guard). I'm currently using the [Spacegray Theme](https://github.com/kkga/spacegray) in Sublime Text 3.
+These are my dotfiles for [Fish Shell](http://fishshell.com/) and [Sublime Text 3](http://www.sublimetext.com/3). I'm currently using the [Spacegray Theme](https://github.com/kkga/spacegray) for Sublime Text 3.
 
 ## Installation
 
@@ -29,11 +29,6 @@ ln -s ~/dotfiles/fish/functions ~/.config/fish/functions
 ###### Sublime Text 3
 ```bash
 ln -s ~/dotfiles/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
-```
-
-###### Sublime Text 3
-```bash
-ln -s ~/dotfiles/guard/templates ~/.guard/
 ```
 
 ### Alternatively..
