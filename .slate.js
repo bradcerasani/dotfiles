@@ -15,15 +15,15 @@ var fullscreen = slate.operation("move", {
   "height": "screenSizeY"
 });
 
-slate.bind("1:ctrl", function(win) {
+slate.bind("up:ctrl,alt,cmd,shift", function(win) {
   win.doOperation(fullscreen);
   var appName = win.app().name();
 });
 
-slate.bind("2:ctrl", function(win) {
+slate.bind("left:ctrl,alt,cmd,shift", function(win) {
   win.doOperation(pushLeft);
 });
 
-slate.bind("3:ctrl", function(win) {
+slate.bind("right:ctrl,alt,cmd,shift", function(win) {
   win.doOperation(pushRight);
 });
