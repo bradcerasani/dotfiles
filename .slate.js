@@ -17,7 +17,10 @@ var fullscreen = slate.operation("move", {
 
 slate.bind("up:ctrl,alt,cmd,shift", function(win) {
   win.doOperation(fullscreen);
-  var appName = win.app().name();
+});
+
+slate.bind("down:ctrl,alt,cmd,shift", function(win) {
+  win.doOperation(fullscreen);
 });
 
 slate.bind("left:ctrl,alt,cmd,shift", function(win) {
