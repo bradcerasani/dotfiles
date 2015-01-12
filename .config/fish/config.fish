@@ -7,19 +7,8 @@ set -x DOCKER_HOST "tcp://192.168.59.103:2375"
 set fish_greeting
   echo Happy (date '+%A').\n
 
-set error NOPE (set_color yellow)chuck testa  🐴
-
 function dl
   docker ps -l -q
-end
-
-function chrome
-  env DYLD_INSERT_LIBRARIES=~/Desktop/patch.dylib
-  /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
-end
-
-function desktop
-  cd $HOME/desktop
 end
 
 function ..
@@ -38,15 +27,14 @@ function .....
   cd ../../../..
 end
 
-function hush
-  touch ~/.hushlogin
-end
-
 function config
   subl ~/.config/fish/config.fish
 end
 
-# IP
+function reload! -d "reload functions and env"  
+  . $HOME/.config/fish/config.fish
+end
+
 function myip
   dig +short myip.opendns.com @resolver1.opendns.com
 end
@@ -95,7 +83,7 @@ end
 # Git Status in Prompt
 function parse_git_branch
   set -l branch (git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
-  # set -l git_diff (git diff)
+  set -l git_diff (git diff)
 
   if test -n "$git_diff"
     echo (set_color red) $branch (set_color normal)
@@ -104,21 +92,30 @@ function parse_git_branch
   end
 end
 
-# Hidden Files
-function show
-  defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder
-end
-
 function hide
-  defaults write com.apple.finder AppleShowAllFiles -bool false; killall Finder
+  switch $argv
+    case desktop
+      defaults write com.apple.finder CreateDesktop -bool false; and killall Finder
+    case hidden
+      defaults write com.apple.finder AppleShowAllFiles -bool false; and killall Finder
+    case iTerm
+      /usr/libexec/PlistBuddy -c 'Add :LSUIElement bool true' /Applications/iTerm.app/Contents/Info.plist
+    case '*'
+      echo Error
+  end
 end
 
-function hidedesktop
-  defaults write com.apple.finder CreateDesktop -bool false; killall Finder
-end
-
-function showdesktop
-  defaults write com.apple.finder CreateDesktop -bool true; killall Finder
+function show
+  switch $argv
+    case desktop
+      defaults write com.apple.finder CreateDesktop -bool true; and killall Finder
+    case hidden
+      defaults write com.apple.finder AppleShowAllFiles -bool true; and killall Finder
+    case iTerm
+      /usr/libexec/PlistBuddy -c 'Delete :LSUIElement' /Applications/iTerm.app/Contents/Info.plist
+    case '*'
+      echo Error
+  end
 end
 
 #  Asset Grabbers (thanks https://github.com/juliogarciag/dotfiles)
