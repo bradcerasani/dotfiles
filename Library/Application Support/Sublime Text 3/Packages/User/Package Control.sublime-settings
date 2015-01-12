@@ -1,0 +1,21 @@
+{
+	"installed_packages":
+	[
+		"4GL",
+		"AdvancedNewFile",
+		"ApacheConf.tmLanguage",
+		"CSScomb",
+		"Dockerfile Syntax Highlighting",
+		"fish-shell",
+		"GitGutter",
+		"GitGutter-Edge",
+		"Handlebars",
+		"Markdown Preview",
+		"Sass",
+		"SCSS",
+		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"Theme - Spacegray",
+		"Vagrant"
+	]
+}

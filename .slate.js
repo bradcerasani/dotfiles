@@ -8,6 +8,11 @@ var pushLeft = slate.operation("push", {
   "style": "bar-resize:screenSizeX/2"
 });
 
+var pushLeftThird = slate.operation("push", {
+  "direction": "left",
+  "style": "bar-resize:screenSizeX/1.333"
+});
+
 var fullscreen = slate.operation("move", {
   "x": "screenOriginX",
   "y": "screenOriginY",
@@ -15,11 +20,11 @@ var fullscreen = slate.operation("move", {
   "height": "screenSizeY"
 });
 
-slate.bind("up:ctrl,alt,cmd,shift", function(win) {
-  win.doOperation(fullscreen);
+var tweetbot = slate.operation("push", {
+  "direction": "right"
 });
 
-slate.bind("down:ctrl,alt,cmd,shift", function(win) {
+slate.bind("up:ctrl,alt,cmd,shift", function(win) {
   win.doOperation(fullscreen);
 });
 
@@ -27,6 +32,14 @@ slate.bind("left:ctrl,alt,cmd,shift", function(win) {
   win.doOperation(pushLeft);
 });
 
+slate.bind("3:ctrl,alt,cmd,shift", function(win) {
+  win.doOperation(pushLeftThird);
+});
+
 slate.bind("right:ctrl,alt,cmd,shift", function(win) {
-  win.doOperation(pushRight);
+  if (win.app().name() == "Tweetbot") {
+    win.doOperation(tweetbot);
+  } else {
+    win.doOperation(pushRight);
+  }
 });

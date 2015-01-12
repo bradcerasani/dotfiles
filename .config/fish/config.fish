@@ -2,11 +2,21 @@ set PATH /opt/bin $PATH
 set PATH /usr/local/bin $PATH
 set PATH $HOME/.rbenv/bin $PATH
 set PATH $HOME/.rbenv/shims $PATH
+set -x DOCKER_HOST "tcp://192.168.59.103:2375"
 
 set fish_greeting
   echo Happy (date '+%A').\n
 
 set error NOPE (set_color yellow)chuck testa  🐴
+
+function dl
+  docker ps -l -q
+end
+
+function chrome
+  env DYLD_INSERT_LIBRARIES=~/Desktop/patch.dylib
+  /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+end
 
 function desktop
   cd $HOME/desktop
@@ -33,45 +43,45 @@ function hush
 end
 
 function config
-	subl ~/.config/fish/config.fish
+  subl ~/.config/fish/config.fish
 end
 
-#	IP
+# IP
 function myip
-	dig +short myip.opendns.com @resolver1.opendns.com
+  dig +short myip.opendns.com @resolver1.opendns.com
 end
 
 # Git Shortcuts
 function g
-	git
+  git
 end
 
 function gs
-	git status
+  git status
 end
 
 function gb
-	git checkout -b
+  git checkout -b
 end
 
 function gc
-	git commit -m $argv
+  git commit -m $argv
 end
 
 function gd
-	git difftool $argv
+  git difftool $argv
 end
 
 function ga
-	git add -A
+  git add -A
 end
 
 function gl
-	git log
+  git log
 end
 
 function g-unstage
-	git rm --cached
+  git rm --cached
 end
 
 function g-undo
@@ -85,7 +95,7 @@ end
 # Git Status in Prompt
 function parse_git_branch
   set -l branch (git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
-  set -l git_diff (git diff)
+  # set -l git_diff (git diff)
 
   if test -n "$git_diff"
     echo (set_color red) $branch (set_color normal)
@@ -111,7 +121,7 @@ function showdesktop
   defaults write com.apple.finder CreateDesktop -bool true; killall Finder
 end
 
-#	 Asset Grabbers (thanks https://github.com/juliogarciag/dotfiles)
+#  Asset Grabbers (thanks https://github.com/juliogarciag/dotfiles)
 function url_final_part -d "get the final part of a string separated by /"
   set str_parts (echo $argv[1] | sed 's/\//\ /g')
   eval "set parts $str_parts"
@@ -127,13 +137,13 @@ function get
     case jquery
       download http://code.jquery.com/jquery.min.js
     case normalize
-    	download https://raw.github.com/necolas/normalize.css/master/normalize.css
+      download https://raw.github.com/necolas/normalize.css/master/normalize.css
     case '*'
       echo $error
   end
 end
 
-#	Blog Kickstart
+# Blog Kickstart
 function blog # $title $tags
   set date (date '+%Y-%m-%d')
   set filename (echo $argv[1] | tr -s ' ' | tr ' ' '-')
@@ -141,14 +151,14 @@ function blog # $title $tags
   set var_count (count $argv)
   cd $gitdir
     if test $var_count = 2
-  		echo title: $argv[1]\nexcerpt: \ndate: $date\ntags: $argv[2]\n---\n\n >entries/$filename.md
+      echo title: $argv[1]\nexcerpt: \ndate: $date\ntags: $argv[2]\n---\n\n >entries/$filename.md
     else
-   		echo title: $argv[1]\nexcerpt: \ndate: $date\ntags: general\n---\n\n >entries/$filename.md
-   	end
+      echo title: $argv[1]\nexcerpt: \ndate: $date\ntags: general\n---\n\n >entries/$filename.md
+    end
   open entries/$filename.md
 end
 
-#	Prompt
+# Prompt
 function fish_prompt
   if test -d .git
     printf '%s  %s%s git:%s ' 🍉 (set_color -o black) (prompt_pwd) (parse_git_branch)

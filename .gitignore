@@ -1,0 +1,35 @@
+# Ignore everything
+/*
+
+# Opt-in
+!.gitignore
+!.bashrc
+!.slate.js
+!.profile
+!README.markdown
+
+# Fish
+!.config
+/.config/*
+!.config/fish/
+
+# Application Support
+!Library
+/Library/*
+!Library/Application Support
+/Library/Application Support/*
+
+## Sublime Text 3
+!Library/Application Support/Sublime Text 3
+/Library/Application Support/Sublime Text 3/Packages/*
+!Library/Application Support/Sublime Text 3/Packages/User
+/Library/Application Support/Sublime Text 3/Packages/User/*
+!/Library/Application Support/Sublime Text 3/Packages/User/preferences.sublime-settings
+!/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings
+
+## Xcode
+!Library/Developer
+/Library/Developer/*
+!Library/Developer/Xcode
+
+.DS_Store
